@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-command-950 text-slate-100 font-sans selection:bg-rose-600 selection:text-white;
+  }
+}
+
+/* Custom Scrollbar for Tactical Command Interface */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 17, 27, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(62, 94, 133, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 68, 68, 0.6);
+}
+
+/* Tactical Glassmorphism & High-Contrast Cards */
+.command-card {
+  @apply bg-command-900/85 border border-command-700/60 rounded-xl shadow-xl backdrop-blur-md transition-all duration-200;
+}
+
+.command-card-hover {
+  @apply hover:border-command-500/80 hover:shadow-2xl hover:shadow-rose-950/20;
+}
+
+.glow-red {
+  box-shadow: 0 0 20px -3px rgba(239, 68, 68, 0.35);
+}
+
+.glow-amber {
+  box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.35);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px -3px rgba(59, 130, 246, 0.35);
+}
+
+/* Radar Sweep Animation */
+.radar-sweep-effect {
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(239, 68, 68, 0.15) 60deg, transparent 65deg);
+  border-radius: 50%;
+  animation: radarSweep 4s linear infinite;
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Badge Styles */
+.badge-critical {
+  @apply bg-rose-500/20 text-rose-300 border border-rose-500/40 font-semibold px-2.5 py-0.5 rounded-full text-xs flex items-center gap-1.5;
+}
+
+.badge-high {
+  @apply bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold px-2.5 py-0.5 rounded-full text-xs flex items-center gap-1.5;
+}
+
+.badge-moderate {
+  @apply bg-yellow-500/20 text-yellow-300 border border-yellow-500/40 font-semibold px-2.5 py-0.5 rounded-full text-xs flex items-center gap-1.5;
+}
+
+.badge-low {
+  @apply bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold px-2.5 py-0.5 rounded-full text-xs flex items-center gap-1.5;
+}
+
+.badge-official {
+  @apply bg-blue-600/25 text-blue-300 border border-blue-400/50 font-bold px-2.5 py-0.5 rounded-md text-xs uppercase tracking-wider flex items-center gap-1.5;
+}
